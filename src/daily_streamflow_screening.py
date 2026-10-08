@@ -2007,7 +2007,7 @@ def make_plots(all_df: pd.DataFrame, retained: pd.DataFrame,
         ax.set_axisbelow(True)
         ax.spines["top"].set_visible(False)
         ax.spines["right"].set_visible(False)
-        # Slightly larger legend for readability, as requested.
+        # Larger legend font for legibility.
         ax.legend(
             frameon=False, loc="upper center", bbox_to_anchor=(0.5, 1.12),
             ncol=6, fontsize=11, markerscale=1.30, handlelength=2.4,
