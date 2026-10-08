@@ -13,7 +13,9 @@ Daily streamflow analysis for the characterization of low-flow regimes and hydro
 
 ## Source code
 
-`src/daily_streamflow_screening.py` implements the daily streamflow screening and diagnostic workflow.
+- `src/daily_streamflow_screening.py`: daily discharge quality control, station screening and drought diagnostics
+- `src/threshold_pooling_comparison.py`: low-flow thresholds and drought-event pooling comparisons
+- `src/hydrograph_visualization.py`: streamflow hydrographs and diagnostic visualization
 
 ## Study data
 
