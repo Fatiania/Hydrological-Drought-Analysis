@@ -1,22 +1,22 @@
 # Hydrological Drought Analysis
 
-Daily streamflow analysis for the characterization of low-flow regimes and hydrological drought events in southern Italy.
-
-## Methods
-
-- Quality control of daily discharge observations
-- Annual data-completeness and station record-length screening
-- Characterization of perennial and intermittent flow regimes
-- Flow-duration curves and threshold-based low-flow analysis
-- Comparison of drought-event identification and pooling methods
-- Graphical assessment of station characteristics and threshold sensitivity
+Event-based characterization of streamflow drought in southern Italian catchments, including perennial and intermittent flow regimes.
 
 ## Source code
 
-- `src/daily_streamflow_screening.py`: daily discharge quality control, station screening and drought diagnostics
-- `src/threshold_pooling_comparison.py`: low-flow thresholds and drought-event pooling comparisons
-- `src/hydrograph_visualization.py`: streamflow hydrographs and diagnostic visualization
+### `src/daily_streamflow_screening.py`
+Performs daily discharge quality control, annual completeness screening, station eligibility assessment and flow-regime classification. The analysis examines flow-duration-curve thresholds, identifies below-threshold events and calculates characteristics including duration, minimum discharge, deficit and frequency. Missing intervals and boundary-touching events are tracked separately to support interpretation of incomplete records.
 
-## Study data
+### `src/threshold_pooling_comparison.py`
+Evaluates threshold-dependent drought-event identification and pooling approaches. The script shares the principal quality-control and event-extraction workflow with the screening implementation but includes comparative analyses of event characteristics under alternative low-flow thresholds and independence assumptions.
 
-The analysis is based on station discharge records. Observational datasets are not included in the repository.
+### `src/hydrograph_visualization.py`
+Extends the daily streamflow analysis with station-scale hydrograph and drought-diagnostic figures. Observed discharge, low-flow reference thresholds, missing intervals and identified events are displayed to examine the temporal structure of individual drought episodes.
+
+## Data screening and thresholds
+
+Annual records with no more than 15 missing daily values are retained; stations require at least 15 usable calendar years. Candidate low-flow thresholds are evaluated separately for perennial and intermittent stations. The reference analysis uses Q90 for perennial rivers and Q50 for intermittent rivers.
+
+## Data
+
+Historical daily discharge records are stored separately from the code.
